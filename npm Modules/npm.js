@@ -38,6 +38,14 @@
 
     npm run <name of command>
 */
+
+/*
+    Uninstalling npm packages:
+
+        1. Delete the line of code from package.json <package name>
+        2. Delete node_modules
+        3. Delete package-lock.json
+*/
 const _ = require('lodash')
 
 const items = [1,[2,[3,[4,[5]]]]]
