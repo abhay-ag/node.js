@@ -8,4 +8,5 @@ const second = readFileSync('./Built-in-Modules/content/second.txt', 'utf-8')
 
 console.log(first, second);
 
-writeFileSync('./Built-in-Modules/content/result-sync.txt', `Here is the result: ${first}, ${second}`)
+// arguments = <path>, <content> <flag: >
+writeFileSync('./Built-in-Modules/content/result-sync.txt', `Here is the result: ${first}, ${second}`, { flag: 'a'})
