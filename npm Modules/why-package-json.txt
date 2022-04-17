@@ -1,0 +1,2 @@
+The node_modules folder in itself is very big so when uploading to VCS like github we can skip that folder and upload it easily
+When any other developer clones our code he/she can easily run 'npm install' and use all the dependencies mentioned in the package.json
