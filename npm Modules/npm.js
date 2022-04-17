@@ -10,3 +10,12 @@
     npm install -g <package name>
     sudo install -g <package name> [mac and linux]
 */
+
+/*
+    package.json - manifest file (stores important info about project/packages)
+
+    Steps to create:
+        1. manual approach (create package.json in the root, create properties etc)
+        2. npm init (step by step, press enter to skip)
+        3. npm init -y (everything default)
+*/
