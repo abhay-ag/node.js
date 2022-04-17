@@ -1,4 +1,9 @@
 const { readFile, writeFile } = require('fs')
+
+// another approach if not want to use util
+
+// const { readFile, writeFile } = require('fs').promises
+
 const util = require('util')
 // Old approach required nesting of readFiles
 /*readFile('./Built-in-Modules/content/first.txt', 'utf-8', (err, res) => {
