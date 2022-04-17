@@ -1,7 +1,6 @@
 /*
     when node is installed npm is installed automatically 
-
-    npm --global 
+    npm
     npm --version
 
     local dependency - uses it only in the current specified project
