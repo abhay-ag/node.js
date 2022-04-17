@@ -23,7 +23,7 @@ sayHi(names.john)
 
 // require without variable
 
-require('./mind-grenade')       // a function inside a module that we invoke then the code will run even the function is not invoked
+require('./mind-grenade')       // a function inside a module that we import then the code will run even the function is not invoked
 
 
 // benifits of modules:
