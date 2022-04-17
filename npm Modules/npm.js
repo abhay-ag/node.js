@@ -31,6 +31,13 @@
         3. npm init -y (everything default)
 */
 
+/*
+    scripts in package.json --> contains all the commands to be executed
+
+    Syntax of commands
+
+    npm run <name of command>
+*/
 const _ = require('lodash')
 
 const items = [1,[2,[3,[4,[5]]]]]
