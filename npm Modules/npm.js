@@ -14,6 +14,8 @@
 /*
     package.json - manifest file (stores important info about project/packages)
 
+    Contains all the information about dependencies.
+
     Steps to create:
         1. manual approach (create package.json in the root, create properties etc)
         2. npm init (step by step, press enter to skip)
