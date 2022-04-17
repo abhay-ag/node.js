@@ -1,4 +1,4 @@
-const { readFile } = require('fs')
+const { readFile, writeFile } = require('fs')
 const util = require('util')
 // Old approach required nesting of readFiles
 /*readFile('./Built-in-Modules/content/first.txt', 'utf-8', (err, res) => {
@@ -24,18 +24,22 @@ const util = require('util')
     })
 }*/
 
-const rFile = util.promisify(readFile)
-
-// ===== STILL HECTIC =====
 // getText('./Built-in-Modules/content/first.txt')
 //     .then(result => console.log(result))
 //     .catch(err => console.log(err))
+// ===== STILL HECTIC =====
 
+
+const rFile = util.promisify(readFile)
+const wFile = util.promisify(writeFile)
 
 const start = async() => {
     try{
-        const first = await getText('./Built-in-Modules/content/first.txt')         // waiting the promise to be resolved
-        const second = await getText('./Built-in-Modules/content/second.txt')
+        const first = await rFile('./Built-in-Modules/content/first.txt', 'utf-8')         // waiting the promise to be resolved
+        const second = await rFile('./Built-in-Modules/content/second.txt', 'utf-8')
+
+        await wFile('./Built-in-Modules/content/easy-fs-async.txt', `Promisify is the easiest way of async fs.readFile and fs.writeFile`)
+
         console.log(first, second);
     }
     catch (error){

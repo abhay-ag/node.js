@@ -1,0 +1,1 @@
+Promisify is the easiest way of async fs.readFile and fs.writeFile
