@@ -20,3 +20,5 @@ readFile('./Built-in-Modules/content/first.txt', 'utf-8', (err,res) => {
     console.log('completed first task');
 })
 console.log('starting next task');
+
+// if the file system responds back with an error or result then only fire the readFile.
