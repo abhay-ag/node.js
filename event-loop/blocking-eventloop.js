@@ -5,7 +5,7 @@ const server = http.createServer((req, res) =>{
         res.end('Home Page')
     }
     else if(req.url === '/about'){
-        // Blocking code
+        // Blocking code ==> block the access to about page to all users
         for(let i = 0; i < 1000; i++){
             for(let j = 0; j < 1000; j++){
                 console.log(`${i}, ${j}`);
