@@ -19,6 +19,7 @@
   "homepage": "https://github.com/abhay-ag/node.js#readme",
   "dependencies": {
     "bootstrap": "^5.1.3",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "nodemon": "^2.0.15"
   }
 }
