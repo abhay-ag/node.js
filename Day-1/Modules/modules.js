@@ -10,8 +10,10 @@
 
 const names  = require('./first_module')    // importing names
 const sayHi = require('./utils')            // importing the function
+const data = require('./alternate_method')
 
 console.log(names);     // logs the object with the data passed
+console.log(data);
 
 sayHi('Abhay')
 // sayHi(john)     // error john is note defined
