@@ -11,7 +11,13 @@
     sudo install -g <package name> [mac and linux]
 
     dev dependency
-    npm i <package name> -D
+    npm i <package name> -D or --save-dev
+*/
+
+/*
+    What is a devdependency?
+
+    It is not installed when npm install is fired. Basically contains all the testing packages, linters, text formatters.
 */
 
 /*
