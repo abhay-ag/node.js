@@ -9,6 +9,9 @@
     global dependency - use it in any project
     npm install -g <package name>
     sudo install -g <package name> [mac and linux]
+
+    dev dependency
+    npm i <package name> -D
 */
 
 /*
