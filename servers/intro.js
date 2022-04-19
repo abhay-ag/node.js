@@ -7,12 +7,15 @@
 /*
     General structure for http messages:
         1. Start line       ==> method ,url
-        2. Header
+        2. Header           ==> key value pair (optional)
         3. blank line for metainfo
-        4. body
+        4. body             ==> optional if no resource accessed
 */
 
 // HTTP Method
 /*
     get, post, put, delete
+
+    1. GET => Read Data
+    2. POST => Send Data
 */  
