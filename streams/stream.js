@@ -6,3 +6,10 @@
     4. transform
 */
 
+const { createReadStream } = require('fs');
+
+const stream = createReadStream('./content/big.txt');   // passing the path is mandatory
+
+stream.on('data', (result) => {
+    console.log(result);
+})
