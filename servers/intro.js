@@ -19,3 +19,15 @@
     1. GET => Read Data
     2. POST => Send Data
 */  
+
+// response message
+
+/*
+First line
+    1. http -- version
+    2. status code
+    3. status text
+
+Header ==> info about our response // mainly JSON data
+Body
+*/
