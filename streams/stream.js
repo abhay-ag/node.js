@@ -8,8 +8,16 @@
 
 const { createReadStream } = require('fs');
 
-const stream = createReadStream('./content/big.txt');   // passing the path is mandatory
+const stream = createReadStream('./content/big.txt', {highWaterMark: 90000, encoding: 'utf-8'});   // passing the path is mandatory
+
+// by default the size of buffer is 64 kb
+// output last buffer - remainder
+// highWaterMark --> control size
 
 stream.on('data', (result) => {
     console.log(result);
+})
+
+stream.on('error', (err) => {
+    console.log(err);
 })
