@@ -18,3 +18,9 @@ const server = http.createServer((req, res) => {
 server.listen(8000)
 // listening point
 // 443 for https protocol
+
+/*
+    MIME types:
+
+    syntax: text/subtype
+*/
