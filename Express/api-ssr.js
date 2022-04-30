@@ -15,9 +15,11 @@
 const express = require('express')
 const app = express();
 
+const { products, people } = require('./data')
+
 // sending json data
 app.get('/', (req, res) => {
-    res.status(200).json([{name: "Abhay"}, {name: "Susan"}])
+    res.status(200).json(products)
 })
 
 app.listen(5000, ()=>{
