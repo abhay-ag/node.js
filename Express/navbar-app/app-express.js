@@ -5,6 +5,8 @@ const app = express()
 // use static and middleware
 app.use(express.static('./public'))    // for easy access of resources || all the static resources
 
+// static assets ==> the server doesn't have to change the files again and again
+
 app.get('/', (req, res)=> {
     // use sendFile instead of send
     res.sendFile(path.resolve(__dirname, 'index.html'))
