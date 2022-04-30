@@ -2,6 +2,7 @@ const express = require('express')
 const path = require('path')
 const app = express()
 
+// use static and middleware
 app.use(express.static('./public'))    // for easy access of resources || all the static resources
 
 app.get('/', (req, res)=> {
