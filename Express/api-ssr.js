@@ -19,7 +19,22 @@ const { products, people } = require('./data')
 
 // sending json data
 app.get('/', (req, res) => {
-    res.status(200).json(products)
+    // res.status(200).json(products)
+    res.send('<h1>Home Page</h1><a href = "/api/products">products</a>')
+})
+
+app.get('/api/products', (req, res) => {
+    // sending product data
+    const newProd = products.map((product) => {
+        const {id, name, image} = product;
+        return {id, name , image}
+    })
+
+    res.json(newProd)
+})
+
+app.all('*', (req, res) => {
+    res.status(404).send('<h1>Resource not found</h1>')
 })
 
 app.listen(5000, ()=>{
