@@ -47,7 +47,14 @@ app.get('/api/products/:productID', (req, res) => {
     // console.log(req.params);
     const {productID} = req.params;
     const singleProduct = products.find((product) => product.id === Number(productID))
-    res.json(singleProduct)
+
+    // if user enters anything else than the specified products
+
+    if(!singleProduct){
+        return res.status(404).send('Product does not exist')
+    }
+
+    return res.json(singleProduct)
 })
 
 app.all('*', (req, res) => {
