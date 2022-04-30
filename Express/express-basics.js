@@ -12,7 +12,8 @@ app.get('/about', (req, res) => {
 
 // setting up a xustom 404 response
 app.all('*', (req, res) => {
-    res.send('Resource not found')
+    res.status(404).send('Resource not found')
+    // status code passing is optional but a common approach is setting up it ourself
 })
 
 app.listen(5000, () => {
