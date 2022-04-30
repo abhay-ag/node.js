@@ -33,6 +33,23 @@ app.get('/api/products', (req, res) => {
     res.json(newProd)
 })
 
+// specific products
+
+// wrong approach we have to set up routes for each product.
+/*app.get('/api/products/1', (req, res) => {
+    const singleProduct = products.find((product) => product.id === 1)
+    res.send(singleProduct);
+})*/
+
+// using route parameters in express.
+app.get('/api/products/:productID', (req, res) => {
+    // logs the product id in the location
+    // console.log(req.params);
+    const {productID} = req.params;
+    const singleProduct = products.find((product) => product.id === Number(productID))
+    res.json(singleProduct)
+})
+
 app.all('*', (req, res) => {
     res.status(404).send('<h1>Resource not found</h1>')
 })
