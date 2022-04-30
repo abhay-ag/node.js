@@ -13,7 +13,11 @@ const logger = require('./logger')
 // sending it to logger.js
 
 // middleware goes in between the path and callback function
-app.get('/',logger , (req, res) => {
+
+// using function on each route
+app.use(logger)         // needs to be placed on top of all app.gets.
+
+app.get('/', (req, res) => {
 
     // if we want the same functionality in all the routes then we have to write again and again
     // better solution setting up a function
