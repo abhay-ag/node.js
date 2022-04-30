@@ -7,12 +7,15 @@ const app = express();
 
 // req => middleware => res         // sits in between the request and the response
 
-const logger = () => {
+// when working on with middleware we must must pass it onto the next middleware unless terminating the middleware.
+const logger = (req, res, next) => {
     const method = req.method;
     const url = req.url;
     const time = new Date().getFullYear();
 
     console.log(method, url, time);
+    // use res.send() to terminate the middleware.
+    next()
 }
 
 // middleware goes in between the path and callback function
