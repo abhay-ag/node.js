@@ -1,5 +1,10 @@
 const http = require('http')
 
+const {readFileSync} = require('fs')
+
+// get all files
+const homePage = readFileSync('./index.html')
+
 /*
     no data returned to user
     no headers used
@@ -22,7 +27,8 @@ const server = http.createServer((req, res) => {
                     //status code  // headers
         res.writeHead(200, {'content-type': 'text/html'})
                                             // html is important to render html else plain text will be rendered
-        res.write('<h1>Home page</h1>')
+        // res.write('<h1>Home page</h1>')
+        res.write(homePage)     // using html as the write method
         res.end()
         // must be called on each response
     }else if(url === '/about'){
