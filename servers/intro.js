@@ -31,3 +31,9 @@ First line
 Header ==> info about our response // mainly JSON data
 Body
 */
+
+
+/*
+    User sends the http request message
+    Server sends the http response message
+*/
