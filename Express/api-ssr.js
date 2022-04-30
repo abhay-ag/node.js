@@ -74,6 +74,15 @@ app.get('/api/v1/query', (req, res) => {
     if(limit){
         sortedProducts = sortedProducts.slice(0, Number(limit))
     }
+
+    // checking if the products exits or not
+
+    if(sortedProducts.length < 1){
+        // res.status(200).send('No products match your search')
+        // if we do not explicitly return the res.send or res.anyMethod express will go on sending the the response 
+        // hence we use return keyword to avoid this error
+        return res.status(200).json({success: true, data: []})
+    }
     
     res.status(200).json(sortedProducts)
 })
