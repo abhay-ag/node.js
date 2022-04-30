@@ -1,0 +1,3 @@
+/*
+    middleware are functions that execute during the request to the server each middleware has the access to the response and request objects.
+*/
