@@ -5,6 +5,7 @@
 const express = require('express')
 const app = express();
 const logger = require('./logger')
+const authorize = require('./authorize')
 
 // req => middleware => res         // sits in between the request and the response
 
@@ -15,8 +16,11 @@ const logger = require('./logger')
 // middleware goes in between the path and callback function
 
 // using function on each route
-app.use('/api',logger)         // needs to be placed on top of all app.gets.
+// app.use('/api',logger)         // needs to be placed on top of all app.gets.
 // will apply to any path after /api :: eg: /api/home/....
+
+// using multiple middleware functions
+app.use([logger, authorize])        // place them in the array.
 
 app.get('/', (req, res) => {
 
