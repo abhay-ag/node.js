@@ -1,18 +1,18 @@
 const express = require('express')
 const routers = express.Router();
 
-let {people} = require('../../Express/data')
+const {getPeople, createPerson, createPersonPostman, updatePerson, deletePerson} = require('../controllers/people')
 
 
 // get method ==> default method the browser performs
 
 // we remove the base from the routers as we have it in the app.js in use
-routers.get('/', /* function moved to ./controllers/people.js */)
+routers.get('/', getPeople /* function moved to ./controllers/people.js */)
 
 // javascript form
-routers.post('/', )
+routers.post('/', createPerson)
 
-routers.post('/postman', )
+routers.post('/postman', createPersonPostman)
 
 
 // routers.all('*', (req, res) => {
@@ -20,9 +20,9 @@ routers.post('/postman', )
 // })
 
 // put method
-routers.put('/:id', )
+routers.put('/:id', updatePerson)
 
 // delete method
-routers.delete('/:id', )
+routers.delete('/:id', deletePerson)
 
 module.exports = routers;

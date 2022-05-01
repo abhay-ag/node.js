@@ -1,3 +1,5 @@
+let {people} = require('../../Express/data')
+
 const getPeople = (req, res)=> {
     res.status(200).json({success: true, data: people})
 }
@@ -57,3 +59,5 @@ const deletePerson = (req, res) => {
     const newPeople = people.filter((person) => person.id !== Number(id))
     res.status(201).json({success: true, data: newPeople})
 }
+
+module.exports = {getPeople, createPerson, createPersonPostman, updatePerson, deletePerson}
