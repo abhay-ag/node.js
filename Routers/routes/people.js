@@ -2,12 +2,12 @@ const express = require('express')
 const routers = express.Router();
 
 // get method ==> default method the browser performs
-app.get('/api/people', (req, res)=> {
+routers.get('/api/people', (req, res)=> {
     res.status(200).json({success: true, data: people})
 })
 
 // javascript form
-app.post('/api/people', (req, res) => {
+routers.post('/api/people', (req, res) => {
     const {name} = req.body;
 
     if(!name){
@@ -16,7 +16,7 @@ app.post('/api/people', (req, res) => {
     res.status(201).json({success: true, person: name})
 })
 
-app.post('/api/people/postman', (req, res) => {
+routers.post('/api/people/postman', (req, res) => {
     const {name} = req.body
 
     if(!name){
@@ -29,12 +29,12 @@ app.post('/api/people/postman', (req, res) => {
 })
 
 
-// app.all('*', (req, res) => {
+// routers.all('*', (req, res) => {
 //     res.status(404).send('Resource not found..')
 // })
 
 // put method
-app.put('/api/people/:id', (req, res) => {
+routers.put('/api/people/:id', (req, res) => {
     const { id } = req.params
     const {name} = req.body
     
@@ -56,7 +56,7 @@ app.put('/api/people/:id', (req, res) => {
 })
 
 // delete method
-app.delete('/api/people/:id', (req, res) => {
+routers.delete('/api/people/:id', (req, res) => {
     const {id} = req.params
 
     const person = people.find((person) =>  person.id === Number(id))
@@ -69,3 +69,5 @@ app.delete('/api/people/:id', (req, res) => {
     const newPeople = people.filter((person) => person.id !== Number(id))
     res.status(201).json({success: true, data: newPeople})
 })
+
+module.exports = routers;
