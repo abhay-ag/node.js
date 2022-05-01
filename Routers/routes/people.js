@@ -7,31 +7,12 @@ let {people} = require('../../Express/data')
 // get method ==> default method the browser performs
 
 // we remove the base from the routers as we have it in the app.js in use
-routers.get('/', (req, res)=> {
-    res.status(200).json({success: true, data: people})
-})
+routers.get('/', /* function moved to ./controllers/people.js */)
 
 // javascript form
-routers.post('/', (req, res) => {
-    const {name} = req.body;
+routers.post('/', )
 
-    if(!name){
-        return res.status(400).json({success: false, msg: 'please provide a name'})
-    }
-    res.status(201).json({success: true, person: name})
-})
-
-routers.post('/postman', (req, res) => {
-    const {name} = req.body
-
-    if(!name){
-        return res
-            .status(400)
-            .json({success: false, msg: 'Please provide a name'})
-    }
-    // joining the provided name and the old people array
-    res.status(201).send({success: true, data: [...people, name]})
-})
+routers.post('/postman', )
 
 
 // routers.all('*', (req, res) => {
