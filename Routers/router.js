@@ -30,7 +30,7 @@ app.post('/login', (req, res) => {
 })
 
 // one route for login, rest all are /api/people...
-
+// goto /routes/people.js
 
 app.listen(5000, () => {
     console.log('Server listening on the port 5000.....');
