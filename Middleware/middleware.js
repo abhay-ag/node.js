@@ -20,7 +20,8 @@ const authorize = require('./authorize')
 // will apply to any path after /api :: eg: /api/home/....
 
 // using multiple middleware functions
-app.use([logger, authorize])        // place them in the array.
+// applies to all the routes.
+// app.use([logger, authorize])        // place them in the array.
 
 app.get('/', (req, res) => {
 
@@ -37,10 +38,17 @@ app.get('/', (req, res) => {
     res.send('<h1>HOME PAGE</h1>')
 })
 
-app.get('/about', (req, res) => {
+// only apply authorize to /about page
+app.get('/about', [logger, authorize], (req, res) => {
+    console.log(req.user);
     res.send('<h1>ABOUT PAGE</h1>')
 })
 
 app.listen(5000, () => {
     console.log('Server listening on the port 5000......');
 })
+
+// our options when using middleware
+// 1. our own
+// 2. express
+// 3. third party
