@@ -1,13 +1,18 @@
 const express = require('express')
 const routers = express.Router();
 
+let {people} = require('../../Express/data')
+
+
 // get method ==> default method the browser performs
-routers.get('/api/people', (req, res)=> {
+
+// we remove the base from the routers as we have it in the app.js in use
+routers.get('/', (req, res)=> {
     res.status(200).json({success: true, data: people})
 })
 
 // javascript form
-routers.post('/api/people', (req, res) => {
+routers.post('/', (req, res) => {
     const {name} = req.body;
 
     if(!name){
@@ -16,7 +21,7 @@ routers.post('/api/people', (req, res) => {
     res.status(201).json({success: true, person: name})
 })
 
-routers.post('/api/people/postman', (req, res) => {
+routers.post('/postman', (req, res) => {
     const {name} = req.body
 
     if(!name){
@@ -34,7 +39,7 @@ routers.post('/api/people/postman', (req, res) => {
 // })
 
 // put method
-routers.put('/api/people/:id', (req, res) => {
+routers.put('/:id', (req, res) => {
     const { id } = req.params
     const {name} = req.body
     
@@ -56,7 +61,7 @@ routers.put('/api/people/:id', (req, res) => {
 })
 
 // delete method
-routers.delete('/api/people/:id', (req, res) => {
+routers.delete('/:id', (req, res) => {
     const {id} = req.params
 
     const person = people.find((person) =>  person.id === Number(id))
