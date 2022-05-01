@@ -3,6 +3,8 @@ const app = express()
 
 let {people} = require('../Express/data')
 
+
+
 // get method ==> default method the browser performs
 app.get('/api/people', (req, res)=> {
     res.status(200).json({success: true, data: people})
